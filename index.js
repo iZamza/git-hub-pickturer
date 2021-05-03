@@ -1,28 +1,28 @@
-const jsonfile = require('jsonfile');
-const moment = require('moment');
-const simpleGit = require('simple-git');
+import simpleGit from 'simple-git';
+import jsonfile from 'jsonfile';
+import moment = require('moment');
 
-
-const FILE_PATH = './gitter.json';
+const filesWithChanges = './gitter.json';
 
 const makeCommit = (x, y) => {
-  const DATE = moment().subtract(1, 'y')
-    .add(1, 'd')
+  const commitDate = moment().subtract(1, 'y')
     .add(x, 'w')
-    .add(y, 'y')
+    .add(y, 'd')
     .format();
 
-  const data = {
-    data: DATE
-  }
-
-  jsonfile.writeFile(FILE_PATH, data, () => {
-    simpleGit()
-      .add([FILE_PATH])
-      .commit(DATE, {'--date': DATE })
-      .push();
+  jsonfile.writeFile(
+    filesWithChanges,
+    {
+    data: commitDate
+    },
+    () => {
+      simpleGit()
+        .add([filesWithChanges])
+        .commit(commitDate, {'--date': commitDate })
+        .push();
   });
 }
 
-makeCommit(0, 0);
+// position of commit
+makeCommit(1, 1);
 
