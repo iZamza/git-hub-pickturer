@@ -1,6 +1,6 @@
-import simpleGit from 'simple-git';
-import jsonfile from 'jsonfile';
-import moment = require('moment');
+const jsonfile = require('jsonfile');
+const moment = require('moment');
+const simpleGit = require('simple-git');
 
 const filesWithChanges = './gitter.json';
 
@@ -12,9 +12,7 @@ const makeCommit = (x, y) => {
 
   jsonfile.writeFile(
     filesWithChanges,
-    {
-    data: commitDate
-    },
+    { data: commitDate },
     () => {
       simpleGit()
         .add([filesWithChanges])
