@@ -1,0 +1,28 @@
+{
+  "name": "node-bot-for-pictures",
+  "version": "0.0.1",
+  "description": "try to make picture for git hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iZamza/git-hub-pickturer.git"
+  },
+  "keywords": [
+    "git",
+    "commiter"
+  ],
+  "author": "Viktar Tsikhmanovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iZamza/git-hub-pickturer/issues"
+  },
+  "homepage": "https://github.com/iZamza/git-hub-pickturer#readme",
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "moment": "^2.29.3",
+    "simple-git": "^3.7.1"
+  }
+}
